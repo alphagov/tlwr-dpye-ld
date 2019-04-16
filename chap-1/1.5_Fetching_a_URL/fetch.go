@@ -15,9 +15,10 @@ func main() {
 			fmt.Fprintf(os.Stderr, "fetch: %v\n", err) // v=default fmt
 			os.Exit(1)
 		}
-		println("resp: ", resp, "err: ", err)
-		b, err := ioutil.ReadAll(resp.Body) // resp.Body contains server reply
+		println("resp: ", resp, "err: ", err) // DP debug
+		b, err := ioutil.ReadAll(resp.Body)   // resp.Body contains server reply
 		// b contains server response now, next must close resp function
+
 		resp.Body.Close()
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "fetch: reading %s: %v\n", url, err)

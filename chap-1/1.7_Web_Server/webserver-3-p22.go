@@ -15,7 +15,7 @@ var count int
 
 func main() {
 	handler := func(w http.ResponseWriter, r *http.Request) {
-		lissajous.Lissajous(w)
+		lissajous.Lissajous(10)
 	}
 	http.HandleFunc("/", handler)
 	http.HandleFunc("/count", counter)

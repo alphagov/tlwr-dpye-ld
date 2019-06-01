@@ -1,6 +1,6 @@
 // Lissajous generates GIF animations of random Lissajous figures.
 
-package main
+package lissajous
 
 import (
 	"image"
@@ -20,10 +20,10 @@ const (
 )
 
 func main() {
-	lissajous(os.Stdout)
+	Lissajous(os.Stdout)
 }
 
-func lissajous(out io.Writer) {
+func Lissajous(out io.Writer) {
 	const (
 		cycles  = 5     // number of complete x oscillator revolutions
 		res     = 0.001 // angular resolution
